@@ -139,6 +139,58 @@ cities_data = {
     }
 }
 
+# Add special locations with custom icons
+special_locations = {
+    "Tangshan": {
+        "coordinates": [39.6292, 118.2742],
+        "icon": """
+            <div style="position: relative;">
+                <div style="
+                    background-color: white;
+                    border-radius: 50%;
+                    padding: 15px 25px;
+                    min-width: 80px;
+                    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+                    text-align: center;
+                    white-space: nowrap;
+                    font-size: 14px;
+                    display: inline-block;
+                ">Tangshan</div>
+                <div style="
+                    font-size: 24px;
+                    position: absolute;
+                    top: -10px;
+                    right: -10px;
+                ">🏠</div>
+            </div>
+        """
+    },
+    "Hong Kong": {
+        "coordinates": [22.3193, 114.1694],
+        "icon": """
+            <div style="position: relative;">
+                <div style="
+                    background-color: white;
+                    border-radius: 50%;
+                    padding: 15px 25px;
+                    min-width: 90px;
+                    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+                    text-align: center;
+                    white-space: nowrap;
+                    font-size: 14px;
+                    display: inline-block;
+                ">Hong Kong</div>
+                <div style="
+                    font-size: 24px;
+                    position: absolute;
+                    top: -10px;
+                    right: -10px;
+                ">✈️</div>
+            </div>
+        """
+    }
+}
+
 def transform_coordinates(lon, lat, austin_lon, austin_lat, guilin_lon, guilin_lat):
     """Transform coordinates to align Austin with Guilin."""
     # Calculate the shift needed
@@ -218,7 +270,7 @@ def create_china_map():
             style_function=lambda x: {
                 'fillColor': 'none',
                 'color': '#CCFFCC',  # Much lighter green
-                'weight': 0.3,       # Thinner line
+                'weight': 0.15,       # Thinner line
                 'fillOpacity': 0,
                 'opacity': 0.5       # More transparent
             }
@@ -228,6 +280,15 @@ def create_china_map():
         
     except Exception as e:
         print(f"Error adding US states outline: {str(e)}")
+
+    # Add special locations with custom icons
+    for location_name, location_data in special_locations.items():
+        folium.Marker(
+            location=location_data["coordinates"],
+            icon=folium.DivIcon(
+                html=location_data["icon"]
+            )
+        ).add_to(m)
 
     # Process cities first to ensure they're on top
     for city_name, city_data in cities_data.items():
