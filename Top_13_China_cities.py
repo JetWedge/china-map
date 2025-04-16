@@ -136,6 +136,12 @@ cities_data = {
             {"name": "Xuanwu Lake", "coordinates": [32.0833, 118.8000], "description": "Urban lake with island gardens"},
             {"name": "Ming Xiaoling Mausoleum", "coordinates": [32.0500, 118.8500], "description": "Tomb of Ming emperor"}
         ]
+    },
+    "Leshan": {
+        "coordinates": [29.5517, 103.7654],
+        "attractions": [
+            {"name": "Leshan Giant Buddha", "coordinates": [29.5446, 103.7754], "description": "Largest stone Buddha in world"}
+        ]
     }
 }
 
@@ -270,7 +276,7 @@ def create_china_map():
             style_function=lambda x: {
                 'fillColor': 'none',
                 'color': '#CCFFCC',  # Much lighter green
-                'weight': 0.15,       # Thinner line
+                'weight': 0.5,       # Thinner line
                 'fillOpacity': 0,
                 'opacity': 0.5       # More transparent
             }
