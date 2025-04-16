@@ -1,6 +1,9 @@
 import folium
 import webbrowser
 import os
+import requests
+import json
+import math
 
 # Define the cities and their attractions with descriptions
 cities_data = {
@@ -136,6 +139,18 @@ cities_data = {
     }
 }
 
+def transform_coordinates(lon, lat, austin_lon, austin_lat, guilin_lon, guilin_lat):
+    """Transform coordinates to align Austin with Guilin."""
+    # Calculate the shift needed
+    lon_shift = guilin_lon - austin_lon
+    lat_shift = guilin_lat - austin_lat
+    
+    # Apply the shift
+    final_lon = lon + lon_shift
+    final_lat = lat + lat_shift
+    
+    return final_lon, final_lat
+
 def create_china_map():
     """Create a Folium map of China with cities and attractions."""
     # Center the map on China
@@ -145,6 +160,64 @@ def create_china_map():
         zoom_start=5,
         tiles='cartodbdark_matter'
     )
+    
+    # Add US states outline for scale comparison
+    us_states_url = "https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/us-states.json"
+    
+    # Fetch US states GeoJSON
+    response = requests.get(us_states_url)
+    us_states = response.json()
+    
+    # Define transformation parameters
+    nola_lat, nola_lon = 29.9511, -90.0715  # New Orleans coordinates
+    guilin_lat, guilin_lon = 25.2744, 110.2903  # Guilin coordinates
+    
+    # Filter out Alaska and Hawaii and transform coordinates
+    filtered_features = []
+    for feature in us_states['features']:
+        state_name = feature['properties']['name']
+        if state_name not in ['Alaska', 'Hawaii']:
+            # Transform coordinates to overlay on China
+            if feature['geometry']['type'] == 'Polygon':
+                coords = feature['geometry']['coordinates'][0]
+                new_coords = []
+                for lon, lat in coords:
+                    final_lon, final_lat = transform_coordinates(
+                        lon, lat,
+                        nola_lon, nola_lat,
+                        guilin_lon, guilin_lat
+                    )
+                    new_coords.append([final_lon, final_lat])
+                feature['geometry']['coordinates'] = [new_coords]
+            elif feature['geometry']['type'] == 'MultiPolygon':
+                new_polys = []
+                for poly in feature['geometry']['coordinates']:
+                    new_coords = []
+                    for lon, lat in poly[0]:
+                        final_lon, final_lat = transform_coordinates(
+                            lon, lat,
+                            nola_lon, nola_lat,
+                            guilin_lon, guilin_lat
+                        )
+                        new_coords.append([final_lon, final_lat])
+                    new_polys.append([new_coords])
+                feature['geometry']['coordinates'] = new_polys
+            filtered_features.append(feature)
+    
+    us_states['features'] = filtered_features
+    
+    # Add transformed US states with light green color
+    folium.GeoJson(
+        us_states,
+        name='Contiguous US States (for scale)',
+        style_function=lambda x: {
+            'fillColor': 'none',
+            'color': '#CCFFCC',  # Much lighter green
+            'weight': 0.3,       # Thinner line
+            'fillOpacity': 0,
+            'opacity': 0.5       # More transparent
+        }
+    ).add_to(m)
     
     # Process cities first to ensure they're on top
     for city_name, city_data in cities_data.items():
@@ -206,6 +279,9 @@ def create_china_map():
                     max_width=300
                 )
             ).add_to(m)
+    
+    # Add layer control to toggle US outline
+    folium.LayerControl().add_to(m)
     
     # Save the map
     map_path = "china_top_cities.html"
