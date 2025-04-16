@@ -1,0 +1,2920 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6c2d57ae388f1b2337d8b08a49bbcc7a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_6c2d57ae388f1b2337d8b08a49bbcc7a" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_6c2d57ae388f1b2337d8b08a49bbcc7a = L.map(
+                "map_6c2d57ae388f1b2337d8b08a49bbcc7a",
+                {
+                    center: [35.8617, 104.1954],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_682492a09143348def275e6dfc8b56f1 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_682492a09143348def275e6dfc8b56f1.addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var circle_marker_b5f4d4acaf68ea9ddf45c754f7a8de8f = L.circleMarker(
+                [39.9042, 116.4074],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 2}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            circle_marker_b5f4d4acaf68ea9ddf45c754f7a8de8f.bindTooltip(
+                `<div style="\n                    font-size: 14px;\n                    font-weight: bold;\n                    color: black;\n                    background-color: white;\n                    border: none;\n                    box-shadow: none;\n                    padding: 1px 2px;\n                    border-radius: 3px;\n                ">
+                     Beijing
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "sticky": false,
+}
+            );
+        
+    
+            var circle_marker_54c3d27fb9f1798b2b30d68f13f882a8 = L.circleMarker(
+                [39.9163, 116.3972],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_6ab2ea5bfb88a996e1d8592e903e5ecd = L.marker(
+                [39.9163, 116.3972],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_4bb9e5e0c5995b7c45c9f0ba738a0b0c = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eForbidden City\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_6ab2ea5bfb88a996e1d8592e903e5ecd.setIcon(div_icon_4bb9e5e0c5995b7c45c9f0ba738a0b0c);
+        
+    
+        var popup_e757018c7132182fa8337184fc1bc9af = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_46632c3f264b958b9bc9bc5dd95100be = $(`<div id="html_46632c3f264b958b9bc9bc5dd95100be" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Imperial palace complex with rich history</div></div>`)[0];
+                popup_e757018c7132182fa8337184fc1bc9af.setContent(html_46632c3f264b958b9bc9bc5dd95100be);
+            
+        
+
+        marker_6ab2ea5bfb88a996e1d8592e903e5ecd.bindPopup(popup_e757018c7132182fa8337184fc1bc9af)
+        ;
+
+        
+    
+    
+                marker_6ab2ea5bfb88a996e1d8592e903e5ecd.setIcon(div_icon_4bb9e5e0c5995b7c45c9f0ba738a0b0c);
+            
+    
+            var circle_marker_615735f021672d9a5bbe1d119d77997f = L.circleMarker(
+                [40.65, 117.2333],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_c9d68fd3c1171d4ea17b94796dcfee45 = L.marker(
+                [40.65, 117.2333],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_092b4ce25a12baeef7d2a4940415f1ba = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eGreat Wall (Jinshanling)\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_c9d68fd3c1171d4ea17b94796dcfee45.setIcon(div_icon_092b4ce25a12baeef7d2a4940415f1ba);
+        
+    
+        var popup_7a36e4273962d368c52ba4703adced5c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7604abbf3dc0520d077ae0e54efdf099 = $(`<div id="html_7604abbf3dc0520d077ae0e54efdf099" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Scenic, less crowded wall section</div></div>`)[0];
+                popup_7a36e4273962d368c52ba4703adced5c.setContent(html_7604abbf3dc0520d077ae0e54efdf099);
+            
+        
+
+        marker_c9d68fd3c1171d4ea17b94796dcfee45.bindPopup(popup_7a36e4273962d368c52ba4703adced5c)
+        ;
+
+        
+    
+    
+                marker_c9d68fd3c1171d4ea17b94796dcfee45.setIcon(div_icon_092b4ce25a12baeef7d2a4940415f1ba);
+            
+    
+            var circle_marker_1dcea61d5b260fb1a48ed89a91f7bea6 = L.circleMarker(
+                [39.9999, 116.275],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_1ee8a643591c0b645f655a7aea7d4745 = L.marker(
+                [39.9999, 116.275],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_73b367f187911576fcf9781bacdd9419 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eSummer Palace\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_1ee8a643591c0b645f655a7aea7d4745.setIcon(div_icon_73b367f187911576fcf9781bacdd9419);
+        
+    
+        var popup_2e8512134be407b6698d050fe44c625e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_aebf464d3ca53f63b51ab6650b3d4bb2 = $(`<div id="html_aebf464d3ca53f63b51ab6650b3d4bb2" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Serene lakeside royal garden</div></div>`)[0];
+                popup_2e8512134be407b6698d050fe44c625e.setContent(html_aebf464d3ca53f63b51ab6650b3d4bb2);
+            
+        
+
+        marker_1ee8a643591c0b645f655a7aea7d4745.bindPopup(popup_2e8512134be407b6698d050fe44c625e)
+        ;
+
+        
+    
+    
+                marker_1ee8a643591c0b645f655a7aea7d4745.setIcon(div_icon_73b367f187911576fcf9781bacdd9419);
+            
+    
+            var circle_marker_c8e2151c803365be8629453c59f59a6e = L.circleMarker(
+                [39.8822, 116.4066],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_a6e578cd755ab1c6248151592ba177bd = L.marker(
+                [39.8822, 116.4066],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_42c3c29961c40d08385746e55382da78 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eTemple of Heaven\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_a6e578cd755ab1c6248151592ba177bd.setIcon(div_icon_42c3c29961c40d08385746e55382da78);
+        
+    
+        var popup_0714e1ccfddf63a55d332e3a09353048 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_232c65c6658685845f6c05808e49c81c = $(`<div id="html_232c65c6658685845f6c05808e49c81c" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Historic site for imperial ceremonies</div></div>`)[0];
+                popup_0714e1ccfddf63a55d332e3a09353048.setContent(html_232c65c6658685845f6c05808e49c81c);
+            
+        
+
+        marker_a6e578cd755ab1c6248151592ba177bd.bindPopup(popup_0714e1ccfddf63a55d332e3a09353048)
+        ;
+
+        
+    
+    
+                marker_a6e578cd755ab1c6248151592ba177bd.setIcon(div_icon_42c3c29961c40d08385746e55382da78);
+            
+    
+            var circle_marker_3b990ca4f90fd734d2e8e37ae3e7cc4f = L.circleMarker(
+                [39.94, 116.4],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_b40e611b5acfcbf9c51984a6ead7be16 = L.marker(
+                [39.94, 116.4],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_fbeb3986298681472fcd520d5518f8fc = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eHutongs\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_b40e611b5acfcbf9c51984a6ead7be16.setIcon(div_icon_fbeb3986298681472fcd520d5518f8fc);
+        
+    
+        var popup_7de9a29ac5bdc6a320b440b5fefec4b3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e168d299ac01bfe2d5b9465eba62ff6c = $(`<div id="html_e168d299ac01bfe2d5b9465eba62ff6c" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Traditional alleys showcasing local life</div></div>`)[0];
+                popup_7de9a29ac5bdc6a320b440b5fefec4b3.setContent(html_e168d299ac01bfe2d5b9465eba62ff6c);
+            
+        
+
+        marker_b40e611b5acfcbf9c51984a6ead7be16.bindPopup(popup_7de9a29ac5bdc6a320b440b5fefec4b3)
+        ;
+
+        
+    
+    
+                marker_b40e611b5acfcbf9c51984a6ead7be16.setIcon(div_icon_fbeb3986298681472fcd520d5518f8fc);
+            
+    
+            var circle_marker_680add08bde37941391142b5e3071bdc = L.circleMarker(
+                [31.2304, 121.4737],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 2}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            circle_marker_680add08bde37941391142b5e3071bdc.bindTooltip(
+                `<div style="\n                    font-size: 14px;\n                    font-weight: bold;\n                    color: black;\n                    background-color: white;\n                    border: none;\n                    box-shadow: none;\n                    padding: 1px 2px;\n                    border-radius: 3px;\n                ">
+                     Shanghai
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "sticky": false,
+}
+            );
+        
+    
+            var circle_marker_8e34d3c8f000ae5415cd706040133f09 = L.circleMarker(
+                [31.2337, 121.4903],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_33397ca79c3de259bbfcba4833656c82 = L.marker(
+                [31.2337, 121.4903],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_4f2005d189d1b31ce1ec6d3a6513d528 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eThe Bund\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_33397ca79c3de259bbfcba4833656c82.setIcon(div_icon_4f2005d189d1b31ce1ec6d3a6513d528);
+        
+    
+        var popup_f124488968b91d7bb0c3939f825de02c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_83018c0c0894bd7f0fcbfdc2497edbec = $(`<div id="html_83018c0c0894bd7f0fcbfdc2497edbec" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Historic waterfront with colonial architecture</div></div>`)[0];
+                popup_f124488968b91d7bb0c3939f825de02c.setContent(html_83018c0c0894bd7f0fcbfdc2497edbec);
+            
+        
+
+        marker_33397ca79c3de259bbfcba4833656c82.bindPopup(popup_f124488968b91d7bb0c3939f825de02c)
+        ;
+
+        
+    
+    
+                marker_33397ca79c3de259bbfcba4833656c82.setIcon(div_icon_4f2005d189d1b31ce1ec6d3a6513d528);
+            
+    
+            var circle_marker_55495dfa07b4ae47dfd5fb2b618321d6 = L.circleMarker(
+                [31.2271, 121.4748],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_43703b0a7f1f0275c7f0a2cbeea29ce2 = L.marker(
+                [31.2271, 121.4748],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_a214368e789a4f4335c67abe9681cf66 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eYu Garden\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_43703b0a7f1f0275c7f0a2cbeea29ce2.setIcon(div_icon_a214368e789a4f4335c67abe9681cf66);
+        
+    
+        var popup_fd8e14a9c96fed64cff9a2a71c428813 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5390b7d87e6971e9e2b3d23593fa2dcd = $(`<div id="html_5390b7d87e6971e9e2b3d23593fa2dcd" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Classical Chinese garden oasis</div></div>`)[0];
+                popup_fd8e14a9c96fed64cff9a2a71c428813.setContent(html_5390b7d87e6971e9e2b3d23593fa2dcd);
+            
+        
+
+        marker_43703b0a7f1f0275c7f0a2cbeea29ce2.bindPopup(popup_fd8e14a9c96fed64cff9a2a71c428813)
+        ;
+
+        
+    
+    
+                marker_43703b0a7f1f0275c7f0a2cbeea29ce2.setIcon(div_icon_a214368e789a4f4335c67abe9681cf66);
+            
+    
+            var circle_marker_7b15f129ffc980432fe72d51cffeb15c = L.circleMarker(
+                [31.1116, 121.0562],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_1c4268b22ad7bb98a15754247c4137c3 = L.marker(
+                [31.1116, 121.0562],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_c9dabe2278e2235563bbdfb65ece2677 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eZhujiajiao Water Town\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_1c4268b22ad7bb98a15754247c4137c3.setIcon(div_icon_c9dabe2278e2235563bbdfb65ece2677);
+        
+    
+        var popup_ebd771ae00ff769523bd3508c3f139a1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5950ffe8bc49f8ffe227eab0c6b9689e = $(`<div id="html_5950ffe8bc49f8ffe227eab0c6b9689e" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Ancient canals and bridges</div></div>`)[0];
+                popup_ebd771ae00ff769523bd3508c3f139a1.setContent(html_5950ffe8bc49f8ffe227eab0c6b9689e);
+            
+        
+
+        marker_1c4268b22ad7bb98a15754247c4137c3.bindPopup(popup_ebd771ae00ff769523bd3508c3f139a1)
+        ;
+
+        
+    
+    
+                marker_1c4268b22ad7bb98a15754247c4137c3.setIcon(div_icon_c9dabe2278e2235563bbdfb65ece2677);
+            
+    
+            var circle_marker_859e34f4647ff0d5c22d4cb5bcccaa77 = L.circleMarker(
+                [31.2289, 121.4733],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_6f08fe8e62617a441acc2bf97e930ac2 = L.marker(
+                [31.2289, 121.4733],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_a90551080a2460c27353d5d9d825c8e9 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eShanghai Museum\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_6f08fe8e62617a441acc2bf97e930ac2.setIcon(div_icon_a90551080a2460c27353d5d9d825c8e9);
+        
+    
+        var popup_616eed4abdf810a8a8d679cd0ab4a0ae = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ed727e9e338ce269f6b7135f5d4e4076 = $(`<div id="html_ed727e9e338ce269f6b7135f5d4e4076" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Extensive collection of Chinese art</div></div>`)[0];
+                popup_616eed4abdf810a8a8d679cd0ab4a0ae.setContent(html_ed727e9e338ce269f6b7135f5d4e4076);
+            
+        
+
+        marker_6f08fe8e62617a441acc2bf97e930ac2.bindPopup(popup_616eed4abdf810a8a8d679cd0ab4a0ae)
+        ;
+
+        
+    
+    
+                marker_6f08fe8e62617a441acc2bf97e930ac2.setIcon(div_icon_a90551080a2460c27353d5d9d825c8e9);
+            
+    
+            var circle_marker_dcd7bb969bd5ea3506423d0a04f448dd = L.circleMarker(
+                [31.1725, 121.445],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_b197da02e9f94a074074da52d1fd7c92 = L.marker(
+                [31.1725, 121.445],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_3419940f833e1209498f51656d7af253 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eLonghua Temple\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_b197da02e9f94a074074da52d1fd7c92.setIcon(div_icon_3419940f833e1209498f51656d7af253);
+        
+    
+        var popup_c86795ae1058dc64b6d664cbd00447b1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_56c9555485c8b20523169e6ecd1db2f7 = $(`<div id="html_56c9555485c8b20523169e6ecd1db2f7" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Oldest temple in Shanghai</div></div>`)[0];
+                popup_c86795ae1058dc64b6d664cbd00447b1.setContent(html_56c9555485c8b20523169e6ecd1db2f7);
+            
+        
+
+        marker_b197da02e9f94a074074da52d1fd7c92.bindPopup(popup_c86795ae1058dc64b6d664cbd00447b1)
+        ;
+
+        
+    
+    
+                marker_b197da02e9f94a074074da52d1fd7c92.setIcon(div_icon_3419940f833e1209498f51656d7af253);
+            
+    
+            var circle_marker_e8c7496fb7dfde0e71d3cfb233d05013 = L.circleMarker(
+                [34.3416, 108.9398],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 2}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            circle_marker_e8c7496fb7dfde0e71d3cfb233d05013.bindTooltip(
+                `<div style="\n                    font-size: 14px;\n                    font-weight: bold;\n                    color: black;\n                    background-color: white;\n                    border: none;\n                    box-shadow: none;\n                    padding: 1px 2px;\n                    border-radius: 3px;\n                ">
+                     Xi'an
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "sticky": false,
+}
+            );
+        
+    
+            var circle_marker_51dc0b3c4d7880600f130fede3a06d72 = L.circleMarker(
+                [34.3843, 109.2789],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_3b628a8318ac4cb634f8bcd70afc2bcd = L.marker(
+                [34.3843, 109.2789],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_8db9a4c1189f4e28569d7a432d26f74a = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eTerracotta Warriors\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_3b628a8318ac4cb634f8bcd70afc2bcd.setIcon(div_icon_8db9a4c1189f4e28569d7a432d26f74a);
+        
+    
+        var popup_1b2756a9fb2fdccc3527925a2b3da5cf = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_12f4b770031a77ad24d9bab191734758 = $(`<div id="html_12f4b770031a77ad24d9bab191734758" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Thousands of life-sized ancient soldiers</div></div>`)[0];
+                popup_1b2756a9fb2fdccc3527925a2b3da5cf.setContent(html_12f4b770031a77ad24d9bab191734758);
+            
+        
+
+        marker_3b628a8318ac4cb634f8bcd70afc2bcd.bindPopup(popup_1b2756a9fb2fdccc3527925a2b3da5cf)
+        ;
+
+        
+    
+    
+                marker_3b628a8318ac4cb634f8bcd70afc2bcd.setIcon(div_icon_8db9a4c1189f4e28569d7a432d26f74a);
+            
+    
+            var circle_marker_0ef92557f8267a4510e44a827fc185f6 = L.circleMarker(
+                [34.292, 108.9465],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_379f28c84d7bf5aa09971abb272d812a = L.marker(
+                [34.292, 108.9465],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_b34bddd89b9ec95b3e29cbc37ac7b673 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eCity Wall\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_379f28c84d7bf5aa09971abb272d812a.setIcon(div_icon_b34bddd89b9ec95b3e29cbc37ac7b673);
+        
+    
+        var popup_57214a64efcda82c8b6d521522f8e4ae = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_20efe12d5cd483d1c035732ccaaf3959 = $(`<div id="html_20efe12d5cd483d1c035732ccaaf3959" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Well-preserved ancient fortifications</div></div>`)[0];
+                popup_57214a64efcda82c8b6d521522f8e4ae.setContent(html_20efe12d5cd483d1c035732ccaaf3959);
+            
+        
+
+        marker_379f28c84d7bf5aa09971abb272d812a.bindPopup(popup_57214a64efcda82c8b6d521522f8e4ae)
+        ;
+
+        
+    
+    
+                marker_379f28c84d7bf5aa09971abb272d812a.setIcon(div_icon_b34bddd89b9ec95b3e29cbc37ac7b673);
+            
+    
+            var circle_marker_fa824050c5b04ec2ae3b57a620bb9457 = L.circleMarker(
+                [34.2197, 108.9597],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_162379e7a690f4466988c75e02102d4b = L.marker(
+                [34.2197, 108.9597],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_d4b0d3be29d51a58ea2721792529a4fb = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eBig Wild Goose Pagoda\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_162379e7a690f4466988c75e02102d4b.setIcon(div_icon_d4b0d3be29d51a58ea2721792529a4fb);
+        
+    
+        var popup_94fe9bcfa32e7449ac2398426e09c928 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fad43d9df076969105b34181660d1bf1 = $(`<div id="html_fad43d9df076969105b34181660d1bf1" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Iconic Buddhist pagoda</div></div>`)[0];
+                popup_94fe9bcfa32e7449ac2398426e09c928.setContent(html_fad43d9df076969105b34181660d1bf1);
+            
+        
+
+        marker_162379e7a690f4466988c75e02102d4b.bindPopup(popup_94fe9bcfa32e7449ac2398426e09c928)
+        ;
+
+        
+    
+    
+                marker_162379e7a690f4466988c75e02102d4b.setIcon(div_icon_d4b0d3be29d51a58ea2721792529a4fb);
+            
+    
+            var circle_marker_78777e6089b05cdb085ff2be1e5f2eef = L.circleMarker(
+                [34.2647, 108.9408],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_af4f6d8455d2362adbbea8cb6dec6712 = L.marker(
+                [34.2647, 108.9408],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_472d5606a6c25637ecb8547f6394a3a6 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eMuslim Quarter\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_af4f6d8455d2362adbbea8cb6dec6712.setIcon(div_icon_472d5606a6c25637ecb8547f6394a3a6);
+        
+    
+        var popup_7b54cdf2774a1099c11fb2ed23e9a293 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1756af87f78081cb636080b4e5ec965b = $(`<div id="html_1756af87f78081cb636080b4e5ec965b" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Vibrant street food and culture</div></div>`)[0];
+                popup_7b54cdf2774a1099c11fb2ed23e9a293.setContent(html_1756af87f78081cb636080b4e5ec965b);
+            
+        
+
+        marker_af4f6d8455d2362adbbea8cb6dec6712.bindPopup(popup_7b54cdf2774a1099c11fb2ed23e9a293)
+        ;
+
+        
+    
+    
+                marker_af4f6d8455d2362adbbea8cb6dec6712.setIcon(div_icon_472d5606a6c25637ecb8547f6394a3a6);
+            
+    
+            var circle_marker_f36ec267cce327f8a8ebaf8d43fd31f8 = L.circleMarker(
+                [34.1997, 108.9597],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_f2dbf0e39b057f188e98a752a294903b = L.marker(
+                [34.1997, 108.9597],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_2d98775d0c0e0f09b1fbb68bbc307f10 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eShaanxi History Museum\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_f2dbf0e39b057f188e98a752a294903b.setIcon(div_icon_2d98775d0c0e0f09b1fbb68bbc307f10);
+        
+    
+        var popup_e55e3661f027d0a7242d358f01fe20ce = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3e3aa415658d9d75fb619f4f33478afe = $(`<div id="html_3e3aa415658d9d75fb619f4f33478afe" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Artifacts from ancient dynasties</div></div>`)[0];
+                popup_e55e3661f027d0a7242d358f01fe20ce.setContent(html_3e3aa415658d9d75fb619f4f33478afe);
+            
+        
+
+        marker_f2dbf0e39b057f188e98a752a294903b.bindPopup(popup_e55e3661f027d0a7242d358f01fe20ce)
+        ;
+
+        
+    
+    
+                marker_f2dbf0e39b057f188e98a752a294903b.setIcon(div_icon_2d98775d0c0e0f09b1fbb68bbc307f10);
+            
+    
+            var circle_marker_f3bfa848b83eb11d6f0b45cbfaebd3fc = L.circleMarker(
+                [30.5728, 104.0668],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 2}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            circle_marker_f3bfa848b83eb11d6f0b45cbfaebd3fc.bindTooltip(
+                `<div style="\n                    font-size: 14px;\n                    font-weight: bold;\n                    color: black;\n                    background-color: white;\n                    border: none;\n                    box-shadow: none;\n                    padding: 1px 2px;\n                    border-radius: 3px;\n                ">
+                     Chengdu
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "sticky": false,
+}
+            );
+        
+    
+            var circle_marker_139716dbb55dcf161946d6012586ad98 = L.circleMarker(
+                [30.7333, 104.15],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_6804b2d3647f03da3d8801e103c942ea = L.marker(
+                [30.7333, 104.15],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_025e340f2197f3111c647b63c6982a83 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eGiant Panda Base\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_6804b2d3647f03da3d8801e103c942ea.setIcon(div_icon_025e340f2197f3111c647b63c6982a83);
+        
+    
+        var popup_a737c4f08352e884595feff5353bc55f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2150d0ea22e9699bba97fbbf7505800a = $(`<div id="html_2150d0ea22e9699bba97fbbf7505800a" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Conservation center for pandas</div></div>`)[0];
+                popup_a737c4f08352e884595feff5353bc55f.setContent(html_2150d0ea22e9699bba97fbbf7505800a);
+            
+        
+
+        marker_6804b2d3647f03da3d8801e103c942ea.bindPopup(popup_a737c4f08352e884595feff5353bc55f)
+        ;
+
+        
+    
+    
+                marker_6804b2d3647f03da3d8801e103c942ea.setIcon(div_icon_025e340f2197f3111c647b63c6982a83);
+            
+    
+            var circle_marker_a63b7dc09bad4223c708176ddfbb2149 = L.circleMarker(
+                [30.65, 104.05],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_92fe402b0981f0bbac7acf564e4e22f9 = L.marker(
+                [30.65, 104.05],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_3ef470d46349d7f0541b24bb1119fd86 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eWuhou Shrine\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_92fe402b0981f0bbac7acf564e4e22f9.setIcon(div_icon_3ef470d46349d7f0541b24bb1119fd86);
+        
+    
+        var popup_bee25fdef7855f5be2532c2b9de10568 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_83e4438106bad3e08733e38f13a3c1f4 = $(`<div id="html_83e4438106bad3e08733e38f13a3c1f4" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Memorial to strategist Zhuge Liang</div></div>`)[0];
+                popup_bee25fdef7855f5be2532c2b9de10568.setContent(html_83e4438106bad3e08733e38f13a3c1f4);
+            
+        
+
+        marker_92fe402b0981f0bbac7acf564e4e22f9.bindPopup(popup_bee25fdef7855f5be2532c2b9de10568)
+        ;
+
+        
+    
+    
+                marker_92fe402b0981f0bbac7acf564e4e22f9.setIcon(div_icon_3ef470d46349d7f0541b24bb1119fd86);
+            
+    
+            var circle_marker_7a58710ea37d1494684b3afd816703e8 = L.circleMarker(
+                [30.63, 104.05],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_c2b2321cf337f8d092d259cb60002aa8 = L.marker(
+                [30.63, 104.05],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_3e2d2ea3983bfda191cd4eb4fd40660a = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eJinli Street\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_c2b2321cf337f8d092d259cb60002aa8.setIcon(div_icon_3e2d2ea3983bfda191cd4eb4fd40660a);
+        
+    
+        var popup_9c4d621489f8a6a9c1b14825e83851c2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_60ace9f77bf0714190d17e7f18f5bee8 = $(`<div id="html_60ace9f77bf0714190d17e7f18f5bee8" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Traditional architecture and snacks</div></div>`)[0];
+                popup_9c4d621489f8a6a9c1b14825e83851c2.setContent(html_60ace9f77bf0714190d17e7f18f5bee8);
+            
+        
+
+        marker_c2b2321cf337f8d092d259cb60002aa8.bindPopup(popup_9c4d621489f8a6a9c1b14825e83851c2)
+        ;
+
+        
+    
+    
+                marker_c2b2321cf337f8d092d259cb60002aa8.setIcon(div_icon_3e2d2ea3983bfda191cd4eb4fd40660a);
+            
+    
+            var circle_marker_6b68ed5468d75937d291e830af5c40f3 = L.circleMarker(
+                [30.9, 103.5],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_a05aabcd33d58e4cc76ed28c61cd599f = L.marker(
+                [30.9, 103.5],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_e91b49bc40b30f92f92835c74b22e889 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eMount Qingcheng\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_a05aabcd33d58e4cc76ed28c61cd599f.setIcon(div_icon_e91b49bc40b30f92f92835c74b22e889);
+        
+    
+        var popup_52896dccf9e27a91d1a15be893c81437 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5aa9e3f26b1601081b65c03d68537778 = $(`<div id="html_5aa9e3f26b1601081b65c03d68537778" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Taoist mountain with lush scenery</div></div>`)[0];
+                popup_52896dccf9e27a91d1a15be893c81437.setContent(html_5aa9e3f26b1601081b65c03d68537778);
+            
+        
+
+        marker_a05aabcd33d58e4cc76ed28c61cd599f.bindPopup(popup_52896dccf9e27a91d1a15be893c81437)
+        ;
+
+        
+    
+    
+                marker_a05aabcd33d58e4cc76ed28c61cd599f.setIcon(div_icon_e91b49bc40b30f92f92835c74b22e889);
+            
+    
+            var circle_marker_43b45c68ce590cbed84f396157192c1e = L.circleMarker(
+                [30.9989, 103.6189],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_a06ee4803c7fc8879ac917f054400c40 = L.marker(
+                [30.9989, 103.6189],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_17bb528aa871d5cae0e48ba2fb2e4ba7 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eDujiangyan Irrigation\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_a06ee4803c7fc8879ac917f054400c40.setIcon(div_icon_17bb528aa871d5cae0e48ba2fb2e4ba7);
+        
+    
+        var popup_959e74a84d93cca6fb3aef1198f1ce2e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d13bc7f23766e33b7010be272e92607f = $(`<div id="html_d13bc7f23766e33b7010be272e92607f" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Ancient engineering marvel</div></div>`)[0];
+                popup_959e74a84d93cca6fb3aef1198f1ce2e.setContent(html_d13bc7f23766e33b7010be272e92607f);
+            
+        
+
+        marker_a06ee4803c7fc8879ac917f054400c40.bindPopup(popup_959e74a84d93cca6fb3aef1198f1ce2e)
+        ;
+
+        
+    
+    
+                marker_a06ee4803c7fc8879ac917f054400c40.setIcon(div_icon_17bb528aa871d5cae0e48ba2fb2e4ba7);
+            
+    
+            var circle_marker_481c98407f7f8e68b7b25d235ab83d39 = L.circleMarker(
+                [25.2744, 110.2903],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 2}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            circle_marker_481c98407f7f8e68b7b25d235ab83d39.bindTooltip(
+                `<div style="\n                    font-size: 14px;\n                    font-weight: bold;\n                    color: black;\n                    background-color: white;\n                    border: none;\n                    box-shadow: none;\n                    padding: 1px 2px;\n                    border-radius: 3px;\n                ">
+                     Guilin
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "sticky": false,
+}
+            );
+        
+    
+            var circle_marker_7c8128e2a33f4c281ef8f91f5e357737 = L.circleMarker(
+                [25.2744, 110.3103],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_9fa166998c3176bab2b4b8a337bae8e5 = L.marker(
+                [25.2744, 110.3103],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_ad3c958139c5a457200b2cdf988863d9 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eLi River Cruise\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_9fa166998c3176bab2b4b8a337bae8e5.setIcon(div_icon_ad3c958139c5a457200b2cdf988863d9);
+        
+    
+        var popup_584cfc66add52a6b2ca2bba954b828e5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_417dc8e7c92adc9a17b307db2d0ffc0a = $(`<div id="html_417dc8e7c92adc9a17b307db2d0ffc0a" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Scenic karst landscapes along river</div></div>`)[0];
+                popup_584cfc66add52a6b2ca2bba954b828e5.setContent(html_417dc8e7c92adc9a17b307db2d0ffc0a);
+            
+        
+
+        marker_9fa166998c3176bab2b4b8a337bae8e5.bindPopup(popup_584cfc66add52a6b2ca2bba954b828e5)
+        ;
+
+        
+    
+    
+                marker_9fa166998c3176bab2b4b8a337bae8e5.setIcon(div_icon_ad3c958139c5a457200b2cdf988863d9);
+            
+    
+            var circle_marker_8b8572d8b544c7731eb3f1ff448ced10 = L.circleMarker(
+                [25.2833, 110.2833],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_602c2b557c4530be10cdcb502f26e05a = L.marker(
+                [25.2833, 110.2833],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_bce01e1269b9c178d0e6c25b1b12f295 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eReed Flute Cave\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_602c2b557c4530be10cdcb502f26e05a.setIcon(div_icon_bce01e1269b9c178d0e6c25b1b12f295);
+        
+    
+        var popup_13575e7387bdfbd5dbf30528ce9bcf48 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c82dd2ae0a6fe0640178b7440cdd9b54 = $(`<div id="html_c82dd2ae0a6fe0640178b7440cdd9b54" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Illuminated limestone formations</div></div>`)[0];
+                popup_13575e7387bdfbd5dbf30528ce9bcf48.setContent(html_c82dd2ae0a6fe0640178b7440cdd9b54);
+            
+        
+
+        marker_602c2b557c4530be10cdcb502f26e05a.bindPopup(popup_13575e7387bdfbd5dbf30528ce9bcf48)
+        ;
+
+        
+    
+    
+                marker_602c2b557c4530be10cdcb502f26e05a.setIcon(div_icon_bce01e1269b9c178d0e6c25b1b12f295);
+            
+    
+            var circle_marker_44bc7c6c15208e6cf5182aca1943a74c = L.circleMarker(
+                [25.2633, 110.2833],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_6851e7feea473d446e4f5e514c28eb92 = L.marker(
+                [25.2633, 110.2833],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_1b338e16bae4ae4ece4c788ac66149d9 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eElephant Trunk Hill\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_6851e7feea473d446e4f5e514c28eb92.setIcon(div_icon_1b338e16bae4ae4ece4c788ac66149d9);
+        
+    
+        var popup_248bbcc787374ec4346abc0c99655b3b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0b08bd911443cef596b9767aab49ef1e = $(`<div id="html_0b08bd911443cef596b9767aab49ef1e" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Iconic rock resembling elephant</div></div>`)[0];
+                popup_248bbcc787374ec4346abc0c99655b3b.setContent(html_0b08bd911443cef596b9767aab49ef1e);
+            
+        
+
+        marker_6851e7feea473d446e4f5e514c28eb92.bindPopup(popup_248bbcc787374ec4346abc0c99655b3b)
+        ;
+
+        
+    
+    
+                marker_6851e7feea473d446e4f5e514c28eb92.setIcon(div_icon_1b338e16bae4ae4ece4c788ac66149d9);
+            
+    
+            var circle_marker_5eb26044ac8a5c7dd056667e5c0c0b6a = L.circleMarker(
+                [25.75, 110.15],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_b7d38ac81825b9228641c5fb92f2b8db = L.marker(
+                [25.75, 110.15],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_56efbb0815fde7799e9ad7cc710f9d8d = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eLongji Rice Terraces\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_b7d38ac81825b9228641c5fb92f2b8db.setIcon(div_icon_56efbb0815fde7799e9ad7cc710f9d8d);
+        
+    
+        var popup_4bccd3b6a3e06491e61c803ca82c6560 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c140faec08c72730860813a5b0b04018 = $(`<div id="html_c140faec08c72730860813a5b0b04018" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Layered fields on hillsides</div></div>`)[0];
+                popup_4bccd3b6a3e06491e61c803ca82c6560.setContent(html_c140faec08c72730860813a5b0b04018);
+            
+        
+
+        marker_b7d38ac81825b9228641c5fb92f2b8db.bindPopup(popup_4bccd3b6a3e06491e61c803ca82c6560)
+        ;
+
+        
+    
+    
+                marker_b7d38ac81825b9228641c5fb92f2b8db.setIcon(div_icon_56efbb0815fde7799e9ad7cc710f9d8d);
+            
+    
+            var circle_marker_4dc51788536a7826b4b70999236b3422 = L.circleMarker(
+                [25.3033, 110.2833],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_b9fcc9fd8f99567b9afb02597b218646 = L.marker(
+                [25.3033, 110.2833],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_a1826310591cdb9035478a51c8dbff39 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eSeven Star Park\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_b9fcc9fd8f99567b9afb02597b218646.setIcon(div_icon_a1826310591cdb9035478a51c8dbff39);
+        
+    
+        var popup_4c27fdb9fefc5b8c1c80a8884ca79eec = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_978536bf7dfc210d7f40d0e42db9924e = $(`<div id="html_978536bf7dfc210d7f40d0e42db9924e" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Natural park with caves and zoo</div></div>`)[0];
+                popup_4c27fdb9fefc5b8c1c80a8884ca79eec.setContent(html_978536bf7dfc210d7f40d0e42db9924e);
+            
+        
+
+        marker_b9fcc9fd8f99567b9afb02597b218646.bindPopup(popup_4c27fdb9fefc5b8c1c80a8884ca79eec)
+        ;
+
+        
+    
+    
+                marker_b9fcc9fd8f99567b9afb02597b218646.setIcon(div_icon_a1826310591cdb9035478a51c8dbff39);
+            
+    
+            var circle_marker_0b06cee911c171341b15d7c2ab091b68 = L.circleMarker(
+                [26.8721, 100.2299],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 2}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            circle_marker_0b06cee911c171341b15d7c2ab091b68.bindTooltip(
+                `<div style="\n                    font-size: 14px;\n                    font-weight: bold;\n                    color: black;\n                    background-color: white;\n                    border: none;\n                    box-shadow: none;\n                    padding: 1px 2px;\n                    border-radius: 3px;\n                ">
+                     Lijiang
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "sticky": false,
+}
+            );
+        
+    
+            var circle_marker_8d3408d50022383592f4d95a008f9ac7 = L.circleMarker(
+                [26.8921, 100.2299],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_02c36d06c0265330f8542f182b6c2fb8 = L.marker(
+                [26.8921, 100.2299],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_ff99d2053017ddb5a197921b112056e6 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eOld Town\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_02c36d06c0265330f8542f182b6c2fb8.setIcon(div_icon_ff99d2053017ddb5a197921b112056e6);
+        
+    
+        var popup_f20af2f4eb5f9bc38a67fd0d0bd3156f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a754d669edcbde7ee7c56da30a38ea6d = $(`<div id="html_a754d669edcbde7ee7c56da30a38ea6d" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">UNESCO site with Naxi culture</div></div>`)[0];
+                popup_f20af2f4eb5f9bc38a67fd0d0bd3156f.setContent(html_a754d669edcbde7ee7c56da30a38ea6d);
+            
+        
+
+        marker_02c36d06c0265330f8542f182b6c2fb8.bindPopup(popup_f20af2f4eb5f9bc38a67fd0d0bd3156f)
+        ;
+
+        
+    
+    
+                marker_02c36d06c0265330f8542f182b6c2fb8.setIcon(div_icon_ff99d2053017ddb5a197921b112056e6);
+            
+    
+            var circle_marker_d2ec5fb76f0ce990d907f9b92235dc68 = L.circleMarker(
+                [26.8521, 100.2299],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_b12dd1e32a81ccb4e94e9114ddc4a51d = L.marker(
+                [26.8521, 100.2299],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_33da2fac9417080919a2f54c7a37e7a5 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eBlack Dragon Pool\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_b12dd1e32a81ccb4e94e9114ddc4a51d.setIcon(div_icon_33da2fac9417080919a2f54c7a37e7a5);
+        
+    
+        var popup_19841ab58f9db07487d6cc870b094441 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_75a4b5e6627bbf19b7a32f712a0ad4bf = $(`<div id="html_75a4b5e6627bbf19b7a32f712a0ad4bf" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Park with stunning views</div></div>`)[0];
+                popup_19841ab58f9db07487d6cc870b094441.setContent(html_75a4b5e6627bbf19b7a32f712a0ad4bf);
+            
+        
+
+        marker_b12dd1e32a81ccb4e94e9114ddc4a51d.bindPopup(popup_19841ab58f9db07487d6cc870b094441)
+        ;
+
+        
+    
+    
+                marker_b12dd1e32a81ccb4e94e9114ddc4a51d.setIcon(div_icon_33da2fac9417080919a2f54c7a37e7a5);
+            
+    
+            var circle_marker_a6f872e54c3dd523e675fc1d04e86b97 = L.circleMarker(
+                [27.1, 100.2],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_8fdd8a6f8359842422a86d8bf63049b7 = L.marker(
+                [27.1, 100.2],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_7e312d693f3df69284acf52747032d9c = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eJade Dragon Snow Mountain\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_8fdd8a6f8359842422a86d8bf63049b7.setIcon(div_icon_7e312d693f3df69284acf52747032d9c);
+        
+    
+        var popup_0f51defe56c2baf9ec225f3c1d19d75e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a11a949a7ad7d8e6432cf70693ea66cd = $(`<div id="html_a11a949a7ad7d8e6432cf70693ea66cd" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Snowy peaks and glaciers</div></div>`)[0];
+                popup_0f51defe56c2baf9ec225f3c1d19d75e.setContent(html_a11a949a7ad7d8e6432cf70693ea66cd);
+            
+        
+
+        marker_8fdd8a6f8359842422a86d8bf63049b7.bindPopup(popup_0f51defe56c2baf9ec225f3c1d19d75e)
+        ;
+
+        
+    
+    
+                marker_8fdd8a6f8359842422a86d8bf63049b7.setIcon(div_icon_7e312d693f3df69284acf52747032d9c);
+            
+    
+            var circle_marker_03a81b2eafd30c80aba16a69d370f1c8 = L.circleMarker(
+                [26.95, 100.2],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_64d0d766c5e82d2e5c9d1c0e64db69af = L.marker(
+                [26.95, 100.2],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_e40691538ca4c39540bec706f7df3f7b = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eBaisha Village\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_64d0d766c5e82d2e5c9d1c0e64db69af.setIcon(div_icon_e40691538ca4c39540bec706f7df3f7b);
+        
+    
+        var popup_e30b53f5027ee976ca33c588373852ef = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_421c7351acea5c920520ef36294e8050 = $(`<div id="html_421c7351acea5c920520ef36294e8050" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Ancient murals and local life</div></div>`)[0];
+                popup_e30b53f5027ee976ca33c588373852ef.setContent(html_421c7351acea5c920520ef36294e8050);
+            
+        
+
+        marker_64d0d766c5e82d2e5c9d1c0e64db69af.bindPopup(popup_e30b53f5027ee976ca33c588373852ef)
+        ;
+
+        
+    
+    
+                marker_64d0d766c5e82d2e5c9d1c0e64db69af.setIcon(div_icon_e40691538ca4c39540bec706f7df3f7b);
+            
+    
+            var circle_marker_8a123d65fc0675cf70d0755875c0e8f0 = L.circleMarker(
+                [26.9, 100.2],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_0ca61073420ebb2f789f40e411efb9a5 = L.marker(
+                [26.9, 100.2],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_e357802b37b1c7234e2d72a93ca2e134 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eShuhe Ancient Town\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_0ca61073420ebb2f789f40e411efb9a5.setIcon(div_icon_e357802b37b1c7234e2d72a93ca2e134);
+        
+    
+        var popup_57c714df4420872c373aaa060f2e47b1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c8abf51ace7b9233903f7dbb3ac992f1 = $(`<div id="html_c8abf51ace7b9233903f7dbb3ac992f1" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Tranquil traditional village</div></div>`)[0];
+                popup_57c714df4420872c373aaa060f2e47b1.setContent(html_c8abf51ace7b9233903f7dbb3ac992f1);
+            
+        
+
+        marker_0ca61073420ebb2f789f40e411efb9a5.bindPopup(popup_57c714df4420872c373aaa060f2e47b1)
+        ;
+
+        
+    
+    
+                marker_0ca61073420ebb2f789f40e411efb9a5.setIcon(div_icon_e357802b37b1c7234e2d72a93ca2e134);
+            
+    
+            var circle_marker_e1f36c49340328858c6482799c772c9c = L.circleMarker(
+                [30.2741, 120.1551],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 2}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            circle_marker_e1f36c49340328858c6482799c772c9c.bindTooltip(
+                `<div style="\n                    font-size: 14px;\n                    font-weight: bold;\n                    color: black;\n                    background-color: white;\n                    border: none;\n                    box-shadow: none;\n                    padding: 1px 2px;\n                    border-radius: 3px;\n                ">
+                     Hangzhou
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "sticky": false,
+}
+            );
+        
+    
+            var circle_marker_c2218163d72f3493401c2b182f1000bc = L.circleMarker(
+                [30.25, 120.15],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_1cad1a8a06374ab60654e047dfd8565e = L.marker(
+                [30.25, 120.15],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_f8eaa9c5141ed1e2e1e6d89e239d868a = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eWest Lake\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_1cad1a8a06374ab60654e047dfd8565e.setIcon(div_icon_f8eaa9c5141ed1e2e1e6d89e239d868a);
+        
+    
+        var popup_280241d4a15aa6ec6ad9eff143d30377 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e77985017d98246a185226276304f431 = $(`<div id="html_e77985017d98246a185226276304f431" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Scenic lake with pagodas and bridges</div></div>`)[0];
+                popup_280241d4a15aa6ec6ad9eff143d30377.setContent(html_e77985017d98246a185226276304f431);
+            
+        
+
+        marker_1cad1a8a06374ab60654e047dfd8565e.bindPopup(popup_280241d4a15aa6ec6ad9eff143d30377)
+        ;
+
+        
+    
+    
+                marker_1cad1a8a06374ab60654e047dfd8565e.setIcon(div_icon_f8eaa9c5141ed1e2e1e6d89e239d868a);
+            
+    
+            var circle_marker_ae005aabcafdbc4dd3b00bf09888fb3d = L.circleMarker(
+                [30.23, 120.15],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_7f6628273c9f7539eed3e286bfd53872 = L.marker(
+                [30.23, 120.15],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_9339049a21f68d6934c234b453b50f21 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eLingyin Temple\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_7f6628273c9f7539eed3e286bfd53872.setIcon(div_icon_9339049a21f68d6934c234b453b50f21);
+        
+    
+        var popup_06d3dfb48a6ee3cbfd0a291ddaf76839 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8571f5913d29eb6e698edc5cee7e568a = $(`<div id="html_8571f5913d29eb6e698edc5cee7e568a" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Historic Buddhist site in forest</div></div>`)[0];
+                popup_06d3dfb48a6ee3cbfd0a291ddaf76839.setContent(html_8571f5913d29eb6e698edc5cee7e568a);
+            
+        
+
+        marker_7f6628273c9f7539eed3e286bfd53872.bindPopup(popup_06d3dfb48a6ee3cbfd0a291ddaf76839)
+        ;
+
+        
+    
+    
+                marker_7f6628273c9f7539eed3e286bfd53872.setIcon(div_icon_9339049a21f68d6934c234b453b50f21);
+            
+    
+            var circle_marker_819cd5297d84e69ede8d4e18b2a59d62 = L.circleMarker(
+                [30.27, 120.15],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_37031bd1432067dfda5e0d2909d2e220 = L.marker(
+                [30.27, 120.15],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_074a8b08c1472fbaa935d98d839351c7 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eTea Plantations\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_37031bd1432067dfda5e0d2909d2e220.setIcon(div_icon_074a8b08c1472fbaa935d98d839351c7);
+        
+    
+        var popup_a1b275ffa53fa8c760d0580cb84415d1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7e8e69cf8dcc6876628949b76d706e8d = $(`<div id="html_7e8e69cf8dcc6876628949b76d706e8d" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Experience traditional tea culture</div></div>`)[0];
+                popup_a1b275ffa53fa8c760d0580cb84415d1.setContent(html_7e8e69cf8dcc6876628949b76d706e8d);
+            
+        
+
+        marker_37031bd1432067dfda5e0d2909d2e220.bindPopup(popup_a1b275ffa53fa8c760d0580cb84415d1)
+        ;
+
+        
+    
+    
+                marker_37031bd1432067dfda5e0d2909d2e220.setIcon(div_icon_074a8b08c1472fbaa935d98d839351c7);
+            
+    
+            var circle_marker_b38522e94aa48063488ba7cd49632bc1 = L.circleMarker(
+                [30.2, 120.15],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_11041fb9619b9fe76f526147afe50b1c = L.marker(
+                [30.2, 120.15],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_259582a25569d4aae2aa9af091328aa8 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eSix Harmonies Pagoda\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_11041fb9619b9fe76f526147afe50b1c.setIcon(div_icon_259582a25569d4aae2aa9af091328aa8);
+        
+    
+        var popup_250b91174038f7f4d9fff4cdad679f52 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4ff8cfa1879c391897cdb3f3f2e20239 = $(`<div id="html_4ff8cfa1879c391897cdb3f3f2e20239" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Ancient riverside pagoda</div></div>`)[0];
+                popup_250b91174038f7f4d9fff4cdad679f52.setContent(html_4ff8cfa1879c391897cdb3f3f2e20239);
+            
+        
+
+        marker_11041fb9619b9fe76f526147afe50b1c.bindPopup(popup_250b91174038f7f4d9fff4cdad679f52)
+        ;
+
+        
+    
+    
+                marker_11041fb9619b9fe76f526147afe50b1c.setIcon(div_icon_259582a25569d4aae2aa9af091328aa8);
+            
+    
+            var circle_marker_b05f1d51bf619c00547859f1e925d4d4 = L.circleMarker(
+                [30.25, 120.05],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_10d14f0adbce296c594dffebdec3fff3 = L.marker(
+                [30.25, 120.05],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_e33f130a5605c995acec6c801cab31fe = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eXixi Wetlands\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_10d14f0adbce296c594dffebdec3fff3.setIcon(div_icon_e33f130a5605c995acec6c801cab31fe);
+        
+    
+        var popup_ec81f6ec00075ad6e8a43512236a8df2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_423ba99f819a1f15302d125131c671b8 = $(`<div id="html_423ba99f819a1f15302d125131c671b8" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Urban wetland with rich biodiversity</div></div>`)[0];
+                popup_ec81f6ec00075ad6e8a43512236a8df2.setContent(html_423ba99f819a1f15302d125131c671b8);
+            
+        
+
+        marker_10d14f0adbce296c594dffebdec3fff3.bindPopup(popup_ec81f6ec00075ad6e8a43512236a8df2)
+        ;
+
+        
+    
+    
+                marker_10d14f0adbce296c594dffebdec3fff3.setIcon(div_icon_e33f130a5605c995acec6c801cab31fe);
+            
+    
+            var circle_marker_631fbe76cdd98e4d914739f6be72f740 = L.circleMarker(
+                [31.299, 120.5853],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 2}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            circle_marker_631fbe76cdd98e4d914739f6be72f740.bindTooltip(
+                `<div style="\n                    font-size: 14px;\n                    font-weight: bold;\n                    color: black;\n                    background-color: white;\n                    border: none;\n                    box-shadow: none;\n                    padding: 1px 2px;\n                    border-radius: 3px;\n                ">
+                     Suzhou
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "sticky": false,
+}
+            );
+        
+    
+            var circle_marker_4361838b87e83d7292c90d6195c8b149 = L.circleMarker(
+                [31.3167, 120.6333],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_9ce964d92ec2aac3fc55deac07d8cf71 = L.marker(
+                [31.3167, 120.6333],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_1cb1befcb8fec49a113ba0140e4bfcf0 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eHumble Administrator\u0027s Garden\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_9ce964d92ec2aac3fc55deac07d8cf71.setIcon(div_icon_1cb1befcb8fec49a113ba0140e4bfcf0);
+        
+    
+        var popup_cf95931339fa9ae5272e7cb29634a460 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6da5fc18450e2fc5b71740e47d3fc852 = $(`<div id="html_6da5fc18450e2fc5b71740e47d3fc852" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Classic Chinese garden design</div></div>`)[0];
+                popup_cf95931339fa9ae5272e7cb29634a460.setContent(html_6da5fc18450e2fc5b71740e47d3fc852);
+            
+        
+
+        marker_9ce964d92ec2aac3fc55deac07d8cf71.bindPopup(popup_cf95931339fa9ae5272e7cb29634a460)
+        ;
+
+        
+    
+    
+                marker_9ce964d92ec2aac3fc55deac07d8cf71.setIcon(div_icon_1cb1befcb8fec49a113ba0140e4bfcf0);
+            
+    
+            var circle_marker_65d8c5c614097e32fd59231448a9f6fa = L.circleMarker(
+                [31.3333, 120.5833],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_3d6160bdacc30605b2e94d315683608d = L.marker(
+                [31.3333, 120.5833],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_4e4139ad9c9fa25f1d4ddf64532955be = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eTiger Hill\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_3d6160bdacc30605b2e94d315683608d.setIcon(div_icon_4e4139ad9c9fa25f1d4ddf64532955be);
+        
+    
+        var popup_804f0798d4025518fb3e0fb28ee2cf24 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_47089dd5a7df7501bf4f7b5c702258eb = $(`<div id="html_47089dd5a7df7501bf4f7b5c702258eb" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Historic site with leaning pagoda</div></div>`)[0];
+                popup_804f0798d4025518fb3e0fb28ee2cf24.setContent(html_47089dd5a7df7501bf4f7b5c702258eb);
+            
+        
+
+        marker_3d6160bdacc30605b2e94d315683608d.bindPopup(popup_804f0798d4025518fb3e0fb28ee2cf24)
+        ;
+
+        
+    
+    
+                marker_3d6160bdacc30605b2e94d315683608d.setIcon(div_icon_4e4139ad9c9fa25f1d4ddf64532955be);
+            
+    
+            var circle_marker_e4202476a126ff267e289196c860dc78 = L.circleMarker(
+                [31.2967, 120.5833],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_58197de0ba11d6084370564b51e9def5 = L.marker(
+                [31.2967, 120.5833],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_25cea631c601f8f470352823bf12983e = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eShantang Street\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_58197de0ba11d6084370564b51e9def5.setIcon(div_icon_25cea631c601f8f470352823bf12983e);
+        
+    
+        var popup_1f495e995cdbd937c5172a2fec12a406 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6fb7e3dca047cb9507cfac9f12d83962 = $(`<div id="html_6fb7e3dca047cb9507cfac9f12d83962" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Ancient street along canal</div></div>`)[0];
+                popup_1f495e995cdbd937c5172a2fec12a406.setContent(html_6fb7e3dca047cb9507cfac9f12d83962);
+            
+        
+
+        marker_58197de0ba11d6084370564b51e9def5.bindPopup(popup_1f495e995cdbd937c5172a2fec12a406)
+        ;
+
+        
+    
+    
+                marker_58197de0ba11d6084370564b51e9def5.setIcon(div_icon_25cea631c601f8f470352823bf12983e);
+            
+    
+            var circle_marker_ccd85f3f2c1ab4c0977e19c02736688e = L.circleMarker(
+                [31.3167, 120.61330000000001],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_4042883c67bdc76d2f480f0eaa007fef = L.marker(
+                [31.3167, 120.61330000000001],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_1072a7d4464ab81c1dec914e54d8752a = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eSuzhou Silk Museum\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_4042883c67bdc76d2f480f0eaa007fef.setIcon(div_icon_1072a7d4464ab81c1dec914e54d8752a);
+        
+    
+        var popup_ff6552335b64f67588c7fcac1117bcd5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c60c1fc9ab7ec0db48da66ef513d7ca1 = $(`<div id="html_c60c1fc9ab7ec0db48da66ef513d7ca1" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">History of silk production</div></div>`)[0];
+                popup_ff6552335b64f67588c7fcac1117bcd5.setContent(html_c60c1fc9ab7ec0db48da66ef513d7ca1);
+            
+        
+
+        marker_4042883c67bdc76d2f480f0eaa007fef.bindPopup(popup_ff6552335b64f67588c7fcac1117bcd5)
+        ;
+
+        
+    
+    
+                marker_4042883c67bdc76d2f480f0eaa007fef.setIcon(div_icon_1072a7d4464ab81c1dec914e54d8752a);
+            
+    
+            var circle_marker_aaaeb15ee3e92f2359b0c5d063f55ee1 = L.circleMarker(
+                [31.3, 120.6333],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_feb86bb2e814dadd9252cdbafe71504a = L.marker(
+                [31.3, 120.6333],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_66b41136b27aa99600e776a8c043a39e = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eMaster of Nets Garden\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_feb86bb2e814dadd9252cdbafe71504a.setIcon(div_icon_66b41136b27aa99600e776a8c043a39e);
+        
+    
+        var popup_db89301667b6620354500d0e91cf23e3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_99c6764ade38910286aba4560baa70e8 = $(`<div id="html_99c6764ade38910286aba4560baa70e8" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Small yet exquisite garden</div></div>`)[0];
+                popup_db89301667b6620354500d0e91cf23e3.setContent(html_99c6764ade38910286aba4560baa70e8);
+            
+        
+
+        marker_feb86bb2e814dadd9252cdbafe71504a.bindPopup(popup_db89301667b6620354500d0e91cf23e3)
+        ;
+
+        
+    
+    
+                marker_feb86bb2e814dadd9252cdbafe71504a.setIcon(div_icon_66b41136b27aa99600e776a8c043a39e);
+            
+    
+            var circle_marker_72884ccff5352d9c90a5c06fb047e580 = L.circleMarker(
+                [29.3274, 110.4342],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 2}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            circle_marker_72884ccff5352d9c90a5c06fb047e580.bindTooltip(
+                `<div style="\n                    font-size: 14px;\n                    font-weight: bold;\n                    color: black;\n                    background-color: white;\n                    border: none;\n                    box-shadow: none;\n                    padding: 1px 2px;\n                    border-radius: 3px;\n                ">
+                     Zhangjiajie
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "sticky": false,
+}
+            );
+        
+    
+            var circle_marker_8be63469c8d72860c662ef5053797e99 = L.circleMarker(
+                [29.3274, 110.41420000000001],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_d8af29542ff3eb2d390fdcfa15a98bcc = L.marker(
+                [29.3274, 110.41420000000001],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_b60c14996bbf0df0d4e9a4c01c70a0f4 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eAvatar Mountains\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_d8af29542ff3eb2d390fdcfa15a98bcc.setIcon(div_icon_b60c14996bbf0df0d4e9a4c01c70a0f4);
+        
+    
+        var popup_2753a2a728ce3f52f6ae798643a2a5f5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_443812b397dcc9458a47d17433403a62 = $(`<div id="html_443812b397dcc9458a47d17433403a62" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Pillar-like formations in park</div></div>`)[0];
+                popup_2753a2a728ce3f52f6ae798643a2a5f5.setContent(html_443812b397dcc9458a47d17433403a62);
+            
+        
+
+        marker_d8af29542ff3eb2d390fdcfa15a98bcc.bindPopup(popup_2753a2a728ce3f52f6ae798643a2a5f5)
+        ;
+
+        
+    
+    
+                marker_d8af29542ff3eb2d390fdcfa15a98bcc.setIcon(div_icon_b60c14996bbf0df0d4e9a4c01c70a0f4);
+            
+    
+            var circle_marker_440899ed1da0dc1591dce6d2c3128edb = L.circleMarker(
+                [29.3074, 110.4342],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_d0d171e754dfa8fbae7cf656f7e66cc5 = L.marker(
+                [29.3074, 110.4342],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_30ceaa0c732ee4f387a792d126350624 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eGlass Bridge\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_d0d171e754dfa8fbae7cf656f7e66cc5.setIcon(div_icon_30ceaa0c732ee4f387a792d126350624);
+        
+    
+        var popup_4c9ea69599669158eb4dad6f8459931d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8e5eaa58a03b09acddaf09a75366c459 = $(`<div id="html_8e5eaa58a03b09acddaf09a75366c459" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Longest glass-bottom bridge worldwide</div></div>`)[0];
+                popup_4c9ea69599669158eb4dad6f8459931d.setContent(html_8e5eaa58a03b09acddaf09a75366c459);
+            
+        
+
+        marker_d0d171e754dfa8fbae7cf656f7e66cc5.bindPopup(popup_4c9ea69599669158eb4dad6f8459931d)
+        ;
+
+        
+    
+    
+                marker_d0d171e754dfa8fbae7cf656f7e66cc5.setIcon(div_icon_30ceaa0c732ee4f387a792d126350624);
+            
+    
+            var circle_marker_7b63c3eeaed21d567055df6e8249d442 = L.circleMarker(
+                [29.05, 110.4833],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_951ba15c1da1f6bc2bdac22987240771 = L.marker(
+                [29.05, 110.4833],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_c58d7dca6670514776a14ded0763fb27 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eTianmen Mountain\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_951ba15c1da1f6bc2bdac22987240771.setIcon(div_icon_c58d7dca6670514776a14ded0763fb27);
+        
+    
+        var popup_23cde4fae1b7d377c35a82279545ed5c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c7c26f89dc06fe17f4e684f803e425f2 = $(`<div id="html_c7c26f89dc06fe17f4e684f803e425f2" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Cliff-hanging walkways and views</div></div>`)[0];
+                popup_23cde4fae1b7d377c35a82279545ed5c.setContent(html_c7c26f89dc06fe17f4e684f803e425f2);
+            
+        
+
+        marker_951ba15c1da1f6bc2bdac22987240771.bindPopup(popup_23cde4fae1b7d377c35a82279545ed5c)
+        ;
+
+        
+    
+    
+                marker_951ba15c1da1f6bc2bdac22987240771.setIcon(div_icon_c58d7dca6670514776a14ded0763fb27);
+            
+    
+            var circle_marker_76d472a517eaa11873e1af335c07728c = L.circleMarker(
+                [29.3474, 110.4342],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_7db939ed1a80e1c262c2a9e923da24fc = L.marker(
+                [29.3474, 110.4342],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_d695a2142104f3bb0602d73c6c09f5e5 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eBaofeng Lake\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_7db939ed1a80e1c262c2a9e923da24fc.setIcon(div_icon_d695a2142104f3bb0602d73c6c09f5e5);
+        
+    
+        var popup_8378b17c8eefce2477958fd10473457f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_58f6dd8a39f0751dd4a977ff5590bf01 = $(`<div id="html_58f6dd8a39f0751dd4a977ff5590bf01" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Boat rides among peaks</div></div>`)[0];
+                popup_8378b17c8eefce2477958fd10473457f.setContent(html_58f6dd8a39f0751dd4a977ff5590bf01);
+            
+        
+
+        marker_7db939ed1a80e1c262c2a9e923da24fc.bindPopup(popup_8378b17c8eefce2477958fd10473457f)
+        ;
+
+        
+    
+    
+                marker_7db939ed1a80e1c262c2a9e923da24fc.setIcon(div_icon_d695a2142104f3bb0602d73c6c09f5e5);
+            
+    
+            var circle_marker_1afe1998157f79b089badb68f31f4dbc = L.circleMarker(
+                [29.3274, 110.4542],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_56f862e439aad0a882f43c1d002107ae = L.marker(
+                [29.3274, 110.4542],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_c5feb8cafe6cefa6b3716522c476ce26 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eGolden Whip Stream\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_56f862e439aad0a882f43c1d002107ae.setIcon(div_icon_c5feb8cafe6cefa6b3716522c476ce26);
+        
+    
+        var popup_f749a3e422d60dbe5f277aa98c8c5970 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9a71a29f2e6d5090104819b8798c54f9 = $(`<div id="html_9a71a29f2e6d5090104819b8798c54f9" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Scenic forest hiking trail</div></div>`)[0];
+                popup_f749a3e422d60dbe5f277aa98c8c5970.setContent(html_9a71a29f2e6d5090104819b8798c54f9);
+            
+        
+
+        marker_56f862e439aad0a882f43c1d002107ae.bindPopup(popup_f749a3e422d60dbe5f277aa98c8c5970)
+        ;
+
+        
+    
+    
+                marker_56f862e439aad0a882f43c1d002107ae.setIcon(div_icon_c5feb8cafe6cefa6b3716522c476ce26);
+            
+    
+            var circle_marker_1d8235dccf91028beab5d67d126ed968 = L.circleMarker(
+                [30.1299, 118.1694],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 2}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            circle_marker_1d8235dccf91028beab5d67d126ed968.bindTooltip(
+                `<div style="\n                    font-size: 14px;\n                    font-weight: bold;\n                    color: black;\n                    background-color: white;\n                    border: none;\n                    box-shadow: none;\n                    padding: 1px 2px;\n                    border-radius: 3px;\n                ">
+                     Huangshan
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "sticky": false,
+}
+            );
+        
+    
+            var circle_marker_44b95ab52610a2e6f26b3a952a901cb2 = L.circleMarker(
+                [30.1299, 118.18939999999999],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_72edebad2480f00b37c36a634d21911e = L.marker(
+                [30.1299, 118.18939999999999],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_e5c46ac4226e02ca9cdb2281948a4424 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eYellow Mountains\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_72edebad2480f00b37c36a634d21911e.setIcon(div_icon_e5c46ac4226e02ca9cdb2281948a4424);
+        
+    
+        var popup_b2f20fe08c3c76e13236739256629171 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d715f558857ede088e07e038ca48c74d = $(`<div id="html_d715f558857ede088e07e038ca48c74d" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Granite peaks and pine trees</div></div>`)[0];
+                popup_b2f20fe08c3c76e13236739256629171.setContent(html_d715f558857ede088e07e038ca48c74d);
+            
+        
+
+        marker_72edebad2480f00b37c36a634d21911e.bindPopup(popup_b2f20fe08c3c76e13236739256629171)
+        ;
+
+        
+    
+    
+                marker_72edebad2480f00b37c36a634d21911e.setIcon(div_icon_e5c46ac4226e02ca9cdb2281948a4424);
+            
+    
+            var circle_marker_3b8dc941b442847efe6dcadcb07978da = L.circleMarker(
+                [30.1099, 118.1694],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_1935c2c20a2b42dd358e430ac775d79d = L.marker(
+                [30.1099, 118.1694],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_903ec7f6aceba2c80236d7b1686e3bdb = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eSea of Clouds\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_1935c2c20a2b42dd358e430ac775d79d.setIcon(div_icon_903ec7f6aceba2c80236d7b1686e3bdb);
+        
+    
+        var popup_cb5d2d00b8da5d3b28fa447bdd286f1a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ad85f6c667fe7b8a3bab05acbed205db = $(`<div id="html_ad85f6c667fe7b8a3bab05acbed205db" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Misty vistas from summits</div></div>`)[0];
+                popup_cb5d2d00b8da5d3b28fa447bdd286f1a.setContent(html_ad85f6c667fe7b8a3bab05acbed205db);
+            
+        
+
+        marker_1935c2c20a2b42dd358e430ac775d79d.bindPopup(popup_cb5d2d00b8da5d3b28fa447bdd286f1a)
+        ;
+
+        
+    
+    
+                marker_1935c2c20a2b42dd358e430ac775d79d.setIcon(div_icon_903ec7f6aceba2c80236d7b1686e3bdb);
+            
+    
+            var circle_marker_a8d7f78218d4e81691da95a04cf7708d = L.circleMarker(
+                [30.1499, 118.1694],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_6b67b04a27b9b8061e38c1d9941f6f38 = L.marker(
+                [30.1499, 118.1694],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_1141d4e298d1dccc842f7e84404bf3fe = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eHot Springs\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_6b67b04a27b9b8061e38c1d9941f6f38.setIcon(div_icon_1141d4e298d1dccc842f7e84404bf3fe);
+        
+    
+        var popup_8647a5924e4447a284c8bec4cf3fafe8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1241708972a52a01239511446a9df243 = $(`<div id="html_1241708972a52a01239511446a9df243" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Natural pools near base</div></div>`)[0];
+                popup_8647a5924e4447a284c8bec4cf3fafe8.setContent(html_1241708972a52a01239511446a9df243);
+            
+        
+
+        marker_6b67b04a27b9b8061e38c1d9941f6f38.bindPopup(popup_8647a5924e4447a284c8bec4cf3fafe8)
+        ;
+
+        
+    
+    
+                marker_6b67b04a27b9b8061e38c1d9941f6f38.setIcon(div_icon_1141d4e298d1dccc842f7e84404bf3fe);
+            
+    
+            var circle_marker_59044886f7b86a9b652dba3415c04fad = L.circleMarker(
+                [30.0, 118.0],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_9f64367a7bc66c22c87a6c003d07874a = L.marker(
+                [30.0, 118.0],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_5dc5a2ed20ed865624ab5a9c4bbbabf7 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eHongcun Village\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_9f64367a7bc66c22c87a6c003d07874a.setIcon(div_icon_5dc5a2ed20ed865624ab5a9c4bbbabf7);
+        
+    
+        var popup_837f4590d273ab37f6b22b87e5433065 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f4ad980ef843c1f717fa1811ccfc0bde = $(`<div id="html_f4ad980ef843c1f717fa1811ccfc0bde" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Ancient village with canals</div></div>`)[0];
+                popup_837f4590d273ab37f6b22b87e5433065.setContent(html_f4ad980ef843c1f717fa1811ccfc0bde);
+            
+        
+
+        marker_9f64367a7bc66c22c87a6c003d07874a.bindPopup(popup_837f4590d273ab37f6b22b87e5433065)
+        ;
+
+        
+    
+    
+                marker_9f64367a7bc66c22c87a6c003d07874a.setIcon(div_icon_5dc5a2ed20ed865624ab5a9c4bbbabf7);
+            
+    
+            var circle_marker_99379129dc3d5d935ad6e849e50d01ad = L.circleMarker(
+                [29.98, 118.0],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_8c07f11c45f7c969d7e69bbee95ba9cf = L.marker(
+                [29.98, 118.0],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_18199771ee3bb8b6a6cd3a0407de950f = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eXidi Village\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_8c07f11c45f7c969d7e69bbee95ba9cf.setIcon(div_icon_18199771ee3bb8b6a6cd3a0407de950f);
+        
+    
+        var popup_95b7a5a840f6568df0c5b3cce30ced3d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dc3204a572926de64a1514be9e3e5a1f = $(`<div id="html_dc3204a572926de64a1514be9e3e5a1f" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">UNESCO village with old charm</div></div>`)[0];
+                popup_95b7a5a840f6568df0c5b3cce30ced3d.setContent(html_dc3204a572926de64a1514be9e3e5a1f);
+            
+        
+
+        marker_8c07f11c45f7c969d7e69bbee95ba9cf.bindPopup(popup_95b7a5a840f6568df0c5b3cce30ced3d)
+        ;
+
+        
+    
+    
+                marker_8c07f11c45f7c969d7e69bbee95ba9cf.setIcon(div_icon_18199771ee3bb8b6a6cd3a0407de950f);
+            
+    
+            var circle_marker_663400e4e4916cfab794ce1ecd798497 = L.circleMarker(
+                [25.6065, 100.2676],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 2}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            circle_marker_663400e4e4916cfab794ce1ecd798497.bindTooltip(
+                `<div style="\n                    font-size: 14px;\n                    font-weight: bold;\n                    color: black;\n                    background-color: white;\n                    border: none;\n                    box-shadow: none;\n                    padding: 1px 2px;\n                    border-radius: 3px;\n                ">
+                     Dali
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "sticky": false,
+}
+            );
+        
+    
+            var circle_marker_5ee5277516a54a8bc8c511b2e7629087 = L.circleMarker(
+                [25.6265, 100.2676],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_5b9503a89b6382e35f4d86068de09ee1 = L.marker(
+                [25.6265, 100.2676],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_d908bf2a5d3ed7514227c196c067b417 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eErhai Lake\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_5b9503a89b6382e35f4d86068de09ee1.setIcon(div_icon_d908bf2a5d3ed7514227c196c067b417);
+        
+    
+        var popup_bd9989bdff76b6bf110360cce0b6df7b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4d942222f9aadbeba59282d1f2763878 = $(`<div id="html_4d942222f9aadbeba59282d1f2763878" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Scenic freshwater lake with bike routes</div></div>`)[0];
+                popup_bd9989bdff76b6bf110360cce0b6df7b.setContent(html_4d942222f9aadbeba59282d1f2763878);
+            
+        
+
+        marker_5b9503a89b6382e35f4d86068de09ee1.bindPopup(popup_bd9989bdff76b6bf110360cce0b6df7b)
+        ;
+
+        
+    
+    
+                marker_5b9503a89b6382e35f4d86068de09ee1.setIcon(div_icon_d908bf2a5d3ed7514227c196c067b417);
+            
+    
+            var circle_marker_3276be1d04255e2133ac23abef5be630 = L.circleMarker(
+                [25.7, 100.2],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_79fd343923a69661c6e2a4b3fbeeb8aa = L.marker(
+                [25.7, 100.2],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_346ad1493bce86dc40f3a747f7964a03 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eThree Pagodas\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_79fd343923a69661c6e2a4b3fbeeb8aa.setIcon(div_icon_346ad1493bce86dc40f3a747f7964a03);
+        
+    
+        var popup_80a83f37b6651bee3f4561e4a7f610a6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a4f8278538c6bb1291fce2182ab24a5f = $(`<div id="html_a4f8278538c6bb1291fce2182ab24a5f" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Iconic Buddhist pagoda trio</div></div>`)[0];
+                popup_80a83f37b6651bee3f4561e4a7f610a6.setContent(html_a4f8278538c6bb1291fce2182ab24a5f);
+            
+        
+
+        marker_79fd343923a69661c6e2a4b3fbeeb8aa.bindPopup(popup_80a83f37b6651bee3f4561e4a7f610a6)
+        ;
+
+        
+    
+    
+                marker_79fd343923a69661c6e2a4b3fbeeb8aa.setIcon(div_icon_346ad1493bce86dc40f3a747f7964a03);
+            
+    
+            var circle_marker_4f3d3bca7f9d1d55dc4b5fd818f6207a = L.circleMarker(
+                [25.5865, 100.2676],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_4c84862ca9a603a571446987dd2e7e8a = L.marker(
+                [25.5865, 100.2676],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_d55ab9296302e36e30471e429378c2ea = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eDali Ancient Town\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_4c84862ca9a603a571446987dd2e7e8a.setIcon(div_icon_d55ab9296302e36e30471e429378c2ea);
+        
+    
+        var popup_a0b20e352caa91387706cace314030db = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_10429d43c658c9c751082fbe3d29ee9c = $(`<div id="html_10429d43c658c9c751082fbe3d29ee9c" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Stone streets and Bai culture</div></div>`)[0];
+                popup_a0b20e352caa91387706cace314030db.setContent(html_10429d43c658c9c751082fbe3d29ee9c);
+            
+        
+
+        marker_4c84862ca9a603a571446987dd2e7e8a.bindPopup(popup_a0b20e352caa91387706cace314030db)
+        ;
+
+        
+    
+    
+                marker_4c84862ca9a603a571446987dd2e7e8a.setIcon(div_icon_d55ab9296302e36e30471e429378c2ea);
+            
+    
+            var circle_marker_638cf0c89f3fd19c2ef72367a2071521 = L.circleMarker(
+                [25.68, 100.2],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_af17d0c3d93311d4b4abab3972f01d59 = L.marker(
+                [25.68, 100.2],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_ada26f10352d2d34fca040b6cc64d50c = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eCangshan Mountain\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_af17d0c3d93311d4b4abab3972f01d59.setIcon(div_icon_ada26f10352d2d34fca040b6cc64d50c);
+        
+    
+        var popup_30b55c304081142ff2fd84483a253dff = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7b74e4bf8161161f4fdadd876d2bc2d3 = $(`<div id="html_7b74e4bf8161161f4fdadd876d2bc2d3" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Trails and cable car views</div></div>`)[0];
+                popup_30b55c304081142ff2fd84483a253dff.setContent(html_7b74e4bf8161161f4fdadd876d2bc2d3);
+            
+        
+
+        marker_af17d0c3d93311d4b4abab3972f01d59.bindPopup(popup_30b55c304081142ff2fd84483a253dff)
+        ;
+
+        
+    
+    
+                marker_af17d0c3d93311d4b4abab3972f01d59.setIcon(div_icon_ada26f10352d2d34fca040b6cc64d50c);
+            
+    
+            var circle_marker_8b0e43b9e34fad5f1f11ebb17efaac13 = L.circleMarker(
+                [25.72, 100.2],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_f2e8deb59a43b367050e260e89eb00f2 = L.marker(
+                [25.72, 100.2],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_4d3cfd0a99c4e2dc05f5ef0e922ef2f0 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eChongsheng Temple\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_f2e8deb59a43b367050e260e89eb00f2.setIcon(div_icon_4d3cfd0a99c4e2dc05f5ef0e922ef2f0);
+        
+    
+        var popup_c1b5e026ae28f7021b762c8e6d3b8939 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2812a13b664ca343e557d465faae895f = $(`<div id="html_2812a13b664ca343e557d465faae895f" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Historic temple by the lake</div></div>`)[0];
+                popup_c1b5e026ae28f7021b762c8e6d3b8939.setContent(html_2812a13b664ca343e557d465faae895f);
+            
+        
+
+        marker_f2e8deb59a43b367050e260e89eb00f2.bindPopup(popup_c1b5e026ae28f7021b762c8e6d3b8939)
+        ;
+
+        
+    
+    
+                marker_f2e8deb59a43b367050e260e89eb00f2.setIcon(div_icon_4d3cfd0a99c4e2dc05f5ef0e922ef2f0);
+            
+    
+            var circle_marker_e692cda76e3ba48dcb4bbce1eba29bd5 = L.circleMarker(
+                [24.8801, 102.8329],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 2}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            circle_marker_e692cda76e3ba48dcb4bbce1eba29bd5.bindTooltip(
+                `<div style="\n                    font-size: 14px;\n                    font-weight: bold;\n                    color: black;\n                    background-color: white;\n                    border: none;\n                    box-shadow: none;\n                    padding: 1px 2px;\n                    border-radius: 3px;\n                ">
+                     Kunming
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "sticky": false,
+}
+            );
+        
+    
+            var circle_marker_e3678761c0e3fb846f696c40e18b990c = L.circleMarker(
+                [24.9001, 102.8329],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_d395beadca5d00d290ade45fe0c2fd89 = L.marker(
+                [24.9001, 102.8329],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_c2d3359d24a0311a287ab6a9b43cae82 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eStone Forest\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_d395beadca5d00d290ade45fe0c2fd89.setIcon(div_icon_c2d3359d24a0311a287ab6a9b43cae82);
+        
+    
+        var popup_251033e40779d31b0062aa1e16adfbc2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9e9b21e98ec96c8f1b2ca95da3a2dda4 = $(`<div id="html_9e9b21e98ec96c8f1b2ca95da3a2dda4" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Karst limestone formations</div></div>`)[0];
+                popup_251033e40779d31b0062aa1e16adfbc2.setContent(html_9e9b21e98ec96c8f1b2ca95da3a2dda4);
+            
+        
+
+        marker_d395beadca5d00d290ade45fe0c2fd89.bindPopup(popup_251033e40779d31b0062aa1e16adfbc2)
+        ;
+
+        
+    
+    
+                marker_d395beadca5d00d290ade45fe0c2fd89.setIcon(div_icon_c2d3359d24a0311a287ab6a9b43cae82);
+            
+    
+            var circle_marker_862113a8dc87adb0ddf55d1129ee8507 = L.circleMarker(
+                [24.8601, 102.8329],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_7579072e77d972276bff02854914e1a2 = L.marker(
+                [24.8601, 102.8329],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_928e7631894388262041ca2bdf46bc6d = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eDian Lake\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_7579072e77d972276bff02854914e1a2.setIcon(div_icon_928e7631894388262041ca2bdf46bc6d);
+        
+    
+        var popup_ff6b6ee741bb480fcf4427ed85dabdb5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_87a23b07a603793cbad998c8d8052857 = $(`<div id="html_87a23b07a603793cbad998c8d8052857" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Yunnan's largest freshwater lake</div></div>`)[0];
+                popup_ff6b6ee741bb480fcf4427ed85dabdb5.setContent(html_87a23b07a603793cbad998c8d8052857);
+            
+        
+
+        marker_7579072e77d972276bff02854914e1a2.bindPopup(popup_ff6b6ee741bb480fcf4427ed85dabdb5)
+        ;
+
+        
+    
+    
+                marker_7579072e77d972276bff02854914e1a2.setIcon(div_icon_928e7631894388262041ca2bdf46bc6d);
+            
+    
+            var circle_marker_35e4b1f2f91b1460ef5305a40cc56e03 = L.circleMarker(
+                [25.05, 102.7],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_fc7314b3df8f4988a3b007fd0a63b50e = L.marker(
+                [25.05, 102.7],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_67d45065c0816f463907f93d775612c2 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eYuantong Temple\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_fc7314b3df8f4988a3b007fd0a63b50e.setIcon(div_icon_67d45065c0816f463907f93d775612c2);
+        
+    
+        var popup_00ddf29a14e1d6ecc096194f5b1841ae = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ff01adae2138de7dc487abd4652a1359 = $(`<div id="html_ff01adae2138de7dc487abd4652a1359" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">One of Yunnan's oldest temples</div></div>`)[0];
+                popup_00ddf29a14e1d6ecc096194f5b1841ae.setContent(html_ff01adae2138de7dc487abd4652a1359);
+            
+        
+
+        marker_fc7314b3df8f4988a3b007fd0a63b50e.bindPopup(popup_00ddf29a14e1d6ecc096194f5b1841ae)
+        ;
+
+        
+    
+    
+                marker_fc7314b3df8f4988a3b007fd0a63b50e.setIcon(div_icon_67d45065c0816f463907f93d775612c2);
+            
+    
+            var circle_marker_f8a197b7d383819db8fa53ba150d68aa = L.circleMarker(
+                [25.03, 102.7],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_b9ea446671a5587d9a4f604f052d7529 = L.marker(
+                [25.03, 102.7],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_ca4d15bd39816c9b9cb25fc72a8a4888 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eGreen Lake Park\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_b9ea446671a5587d9a4f604f052d7529.setIcon(div_icon_ca4d15bd39816c9b9cb25fc72a8a4888);
+        
+    
+        var popup_11ede7d6a2f8892b59d2b5f0983d00fe = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_10a3fa49910bcb533f0aac9ddaebeb68 = $(`<div id="html_10a3fa49910bcb533f0aac9ddaebeb68" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Urban park with teahouses</div></div>`)[0];
+                popup_11ede7d6a2f8892b59d2b5f0983d00fe.setContent(html_10a3fa49910bcb533f0aac9ddaebeb68);
+            
+        
+
+        marker_b9ea446671a5587d9a4f604f052d7529.bindPopup(popup_11ede7d6a2f8892b59d2b5f0983d00fe)
+        ;
+
+        
+    
+    
+                marker_b9ea446671a5587d9a4f604f052d7529.setIcon(div_icon_ca4d15bd39816c9b9cb25fc72a8a4888);
+            
+    
+            var circle_marker_2ce3614b84e84aacdafad4d366c90ca5 = L.circleMarker(
+                [25.07, 102.7],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_27d1aac94d7a369bcb3822f713b205bd = L.marker(
+                [25.07, 102.7],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_a65ee74ce62cdfaf6acb32dcc6138d8f = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eGolden Temple\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_27d1aac94d7a369bcb3822f713b205bd.setIcon(div_icon_a65ee74ce62cdfaf6acb32dcc6138d8f);
+        
+    
+        var popup_8b7c2de06a1f0f4e6f2dabcccc199ce8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6cd7ca3797e25e44a2373e7b29f32613 = $(`<div id="html_6cd7ca3797e25e44a2373e7b29f32613" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Bronze temple in scenic park</div></div>`)[0];
+                popup_8b7c2de06a1f0f4e6f2dabcccc199ce8.setContent(html_6cd7ca3797e25e44a2373e7b29f32613);
+            
+        
+
+        marker_27d1aac94d7a369bcb3822f713b205bd.bindPopup(popup_8b7c2de06a1f0f4e6f2dabcccc199ce8)
+        ;
+
+        
+    
+    
+                marker_27d1aac94d7a369bcb3822f713b205bd.setIcon(div_icon_a65ee74ce62cdfaf6acb32dcc6138d8f);
+            
+    
+            var circle_marker_0ccc60e2e9ed9d64a258cb6690c0325a = L.circleMarker(
+                [32.0603, 118.7969],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15, "stroke": true, "weight": 2}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            circle_marker_0ccc60e2e9ed9d64a258cb6690c0325a.bindTooltip(
+                `<div style="\n                    font-size: 14px;\n                    font-weight: bold;\n                    color: black;\n                    background-color: white;\n                    border: none;\n                    box-shadow: none;\n                    padding: 1px 2px;\n                    border-radius: 3px;\n                ">
+                     Nanjing
+                 </div>`,
+                {
+  "permanent": true,
+  "direction": "right",
+  "sticky": false,
+}
+            );
+        
+    
+            var circle_marker_cd1b21faedc0be23e101c9ad45d871bf = L.circleMarker(
+                [32.0803, 118.7969],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_3fd5340c5b289cacb6dbd41805ebdf33 = L.marker(
+                [32.0803, 118.7969],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_e752d209e2b9f6dfd84e488c81a50c57 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eSun Yat-sen Mausoleum\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_3fd5340c5b289cacb6dbd41805ebdf33.setIcon(div_icon_e752d209e2b9f6dfd84e488c81a50c57);
+        
+    
+        var popup_b4fdeac8b144b01d87f54f6b14c3bdb0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_df62160fce3b795ec7cf26feeae3881b = $(`<div id="html_df62160fce3b795ec7cf26feeae3881b" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Tribute to revolutionary leader</div></div>`)[0];
+                popup_b4fdeac8b144b01d87f54f6b14c3bdb0.setContent(html_df62160fce3b795ec7cf26feeae3881b);
+            
+        
+
+        marker_3fd5340c5b289cacb6dbd41805ebdf33.bindPopup(popup_b4fdeac8b144b01d87f54f6b14c3bdb0)
+        ;
+
+        
+    
+    
+                marker_3fd5340c5b289cacb6dbd41805ebdf33.setIcon(div_icon_e752d209e2b9f6dfd84e488c81a50c57);
+            
+    
+            var circle_marker_f64592b57245c80976358024d98b85b3 = L.circleMarker(
+                [32.05, 118.75],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_312db1788508af77a47d693b93787aed = L.marker(
+                [32.05, 118.75],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_938e9ccb408b90528a56345feb953b13 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eNanjing Massacre Museum\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_312db1788508af77a47d693b93787aed.setIcon(div_icon_938e9ccb408b90528a56345feb953b13);
+        
+    
+        var popup_de06fc66516e3ecb0acca96e9ce33a95 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9ba9d5076b2b23b4f13d5933da282ba5 = $(`<div id="html_9ba9d5076b2b23b4f13d5933da282ba5" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">WWII history memorial</div></div>`)[0];
+                popup_de06fc66516e3ecb0acca96e9ce33a95.setContent(html_9ba9d5076b2b23b4f13d5933da282ba5);
+            
+        
+
+        marker_312db1788508af77a47d693b93787aed.bindPopup(popup_de06fc66516e3ecb0acca96e9ce33a95)
+        ;
+
+        
+    
+    
+                marker_312db1788508af77a47d693b93787aed.setIcon(div_icon_938e9ccb408b90528a56345feb953b13);
+            
+    
+            var circle_marker_4599a18f625ae9143875c85ac3ed4150 = L.circleMarker(
+                [32.0333, 118.7833],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_7bd6d549d25d7f755513014c8d3b31e3 = L.marker(
+                [32.0333, 118.7833],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_51574e4c8b68fc31f27238a2c13fab6c = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eConfucius Temple\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_7bd6d549d25d7f755513014c8d3b31e3.setIcon(div_icon_51574e4c8b68fc31f27238a2c13fab6c);
+        
+    
+        var popup_f2e410442e07205d68e4a4c344d42219 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1c8498b021ef0f6093feefa62d8eeedb = $(`<div id="html_1c8498b021ef0f6093feefa62d8eeedb" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Cultural center with shops</div></div>`)[0];
+                popup_f2e410442e07205d68e4a4c344d42219.setContent(html_1c8498b021ef0f6093feefa62d8eeedb);
+            
+        
+
+        marker_7bd6d549d25d7f755513014c8d3b31e3.bindPopup(popup_f2e410442e07205d68e4a4c344d42219)
+        ;
+
+        
+    
+    
+                marker_7bd6d549d25d7f755513014c8d3b31e3.setIcon(div_icon_51574e4c8b68fc31f27238a2c13fab6c);
+            
+    
+            var circle_marker_32ff4e3d5cb51782ac68fbaab28c89ac = L.circleMarker(
+                [32.0833, 118.8],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_f7d3a91cb40e908cd306de37e3085488 = L.marker(
+                [32.0833, 118.8],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_297c8e47dc4ab808d905679403d2c9da = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eXuanwu Lake\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_f7d3a91cb40e908cd306de37e3085488.setIcon(div_icon_297c8e47dc4ab808d905679403d2c9da);
+        
+    
+        var popup_6fd3e0d74f3aaca657c7c99acd80fd0f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_13d73bd3ced8ad79b17752455c3b1924 = $(`<div id="html_13d73bd3ced8ad79b17752455c3b1924" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Urban lake with island gardens</div></div>`)[0];
+                popup_6fd3e0d74f3aaca657c7c99acd80fd0f.setContent(html_13d73bd3ced8ad79b17752455c3b1924);
+            
+        
+
+        marker_f7d3a91cb40e908cd306de37e3085488.bindPopup(popup_6fd3e0d74f3aaca657c7c99acd80fd0f)
+        ;
+
+        
+    
+    
+                marker_f7d3a91cb40e908cd306de37e3085488.setIcon(div_icon_297c8e47dc4ab808d905679403d2c9da);
+            
+    
+            var circle_marker_390057c8344a3a4f37adff475c3ba1e6 = L.circleMarker(
+                [32.05, 118.85],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 1}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var marker_408503cc5b9395b5f83cca6c90fcdcd5 = L.marker(
+                [32.05, 118.85],
+                {
+}
+            ).addTo(map_6c2d57ae388f1b2337d8b08a49bbcc7a);
+        
+    
+            var div_icon_a8b47555cda23ddfed9f4170de80cfc3 = L.divIcon({
+  "html": "\n                        \u003cdiv style=\"\n                            font-size: 12px;\n                            color: white;\n                            background-color: transparent;\n                            padding: 3px 6px;\n                            cursor: pointer;\n                            white-space: nowrap;\n                            position: absolute;\n                            transform: translate(15px, -10px);\n                        \"\u003eMing Xiaoling Mausoleum\u003c/div\u003e\n                    ",
+  "className": "empty",
+});
+            marker_408503cc5b9395b5f83cca6c90fcdcd5.setIcon(div_icon_a8b47555cda23ddfed9f4170de80cfc3);
+        
+    
+        var popup_91ebf7dc30de3594744db611ede59116 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2a77c71605e5f0229772b26e8a073911 = $(`<div id="html_2a77c71605e5f0229772b26e8a073911" style="width: 100.0%; height: 100.0%;"><div style="font-size: 12px; padding: 5px; min-width: 150px;">Tomb of Ming emperor</div></div>`)[0];
+                popup_91ebf7dc30de3594744db611ede59116.setContent(html_2a77c71605e5f0229772b26e8a073911);
+            
+        
+
+        marker_408503cc5b9395b5f83cca6c90fcdcd5.bindPopup(popup_91ebf7dc30de3594744db611ede59116)
+        ;
+
+        
+    
+    
+                marker_408503cc5b9395b5f83cca6c90fcdcd5.setIcon(div_icon_a8b47555cda23ddfed9f4170de80cfc3);
+            
+</script>
+</html>
