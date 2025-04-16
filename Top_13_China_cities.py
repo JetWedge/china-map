@@ -164,61 +164,72 @@ def create_china_map():
     # Add US states outline for scale comparison
     us_states_url = "https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/us-states.json"
     
-    # Fetch US states GeoJSON
-    response = requests.get(us_states_url)
-    us_states = response.json()
-    
-    # Define transformation parameters
-    nola_lat, nola_lon = 29.9511, -90.0715  # New Orleans coordinates
-    guilin_lat, guilin_lon = 25.2744, 110.2903  # Guilin coordinates
-    
-    # Filter out Alaska and Hawaii and transform coordinates
-    filtered_features = []
-    for feature in us_states['features']:
-        state_name = feature['properties']['name']
-        if state_name not in ['Alaska', 'Hawaii']:
-            # Transform coordinates to overlay on China
-            if feature['geometry']['type'] == 'Polygon':
-                coords = feature['geometry']['coordinates'][0]
-                new_coords = []
-                for lon, lat in coords:
-                    final_lon, final_lat = transform_coordinates(
-                        lon, lat,
-                        nola_lon, nola_lat,
-                        guilin_lon, guilin_lat
-                    )
-                    new_coords.append([final_lon, final_lat])
-                feature['geometry']['coordinates'] = [new_coords]
-            elif feature['geometry']['type'] == 'MultiPolygon':
-                new_polys = []
-                for poly in feature['geometry']['coordinates']:
+    try:
+        # Fetch US states GeoJSON with error handling
+        response = requests.get(us_states_url)
+        response.raise_for_status()  # Raise an exception for bad status codes
+        us_states = response.json()
+        
+        # Print for debugging
+        print(f"Successfully fetched US states GeoJSON with {len(us_states['features'])} features")
+        
+        # Define transformation parameters
+        nola_lat, nola_lon = 29.9511, -90.0715  # New Orleans coordinates
+        guilin_lat, guilin_lon = 25.2744, 110.2903  # Guilin coordinates
+        
+        # Filter out Alaska and Hawaii and transform coordinates
+        filtered_features = []
+        for feature in us_states['features']:
+            state_name = feature['properties'].get('name', '')
+            if state_name.lower() not in ['alaska', 'hawaii']:
+                # Transform coordinates to overlay on China
+                if feature['geometry']['type'] == 'Polygon':
+                    coords = feature['geometry']['coordinates'][0]
                     new_coords = []
-                    for lon, lat in poly[0]:
+                    for lon, lat in coords:
                         final_lon, final_lat = transform_coordinates(
                             lon, lat,
                             nola_lon, nola_lat,
                             guilin_lon, guilin_lat
                         )
                         new_coords.append([final_lon, final_lat])
-                    new_polys.append([new_coords])
-                feature['geometry']['coordinates'] = new_polys
-            filtered_features.append(feature)
-    
-    us_states['features'] = filtered_features
-    
-    # Add transformed US states with light green color
-    folium.GeoJson(
-        us_states,
-        name='Contiguous US States (for scale)',
-        style_function=lambda x: {
-            'fillColor': 'none',
-            'color': '#CCFFCC',  # Much lighter green
-            'weight': 0.3,       # Thinner line
-            'fillOpacity': 0,
-            'opacity': 0.5       # More transparent
-        }
-    ).add_to(m)
-    
+                    feature['geometry']['coordinates'] = [new_coords]
+                    filtered_features.append(feature)
+                elif feature['geometry']['type'] == 'MultiPolygon':
+                    new_polys = []
+                    for poly in feature['geometry']['coordinates']:
+                        new_coords = []
+                        for lon, lat in poly[0]:
+                            final_lon, final_lat = transform_coordinates(
+                                lon, lat,
+                                nola_lon, nola_lat,
+                                guilin_lon, guilin_lat
+                            )
+                            new_coords.append([final_lon, final_lat])
+                        new_polys.append([new_coords])
+                    feature['geometry']['coordinates'] = new_polys
+                    filtered_features.append(feature)
+        
+        us_states['features'] = filtered_features
+        
+        # Add transformed US states with light green color
+        folium.GeoJson(
+            us_states,
+            name='Contiguous US States (for scale)',
+            style_function=lambda x: {
+                'fillColor': 'none',
+                'color': '#CCFFCC',  # Much lighter green
+                'weight': 0.3,       # Thinner line
+                'fillOpacity': 0,
+                'opacity': 0.5       # More transparent
+            }
+        ).add_to(m)
+        
+        print("Successfully added US states outline to map")
+        
+    except Exception as e:
+        print(f"Error adding US states outline: {str(e)}")
+
     # Process cities first to ensure they're on top
     for city_name, city_data in cities_data.items():
         # Add city marker with permanent tooltip
