@@ -162,16 +162,15 @@ def create_china_map():
     )
     
     # Add US states outline for scale comparison
-    us_states_url = "https://raw.githubusercontent.com/python-visualization/folium/master/examples/data/us-states.json"
+    us_states_file = "data/us-states.json"
     
     try:
-        # Fetch US states GeoJSON with error handling
-        response = requests.get(us_states_url)
-        response.raise_for_status()  # Raise an exception for bad status codes
-        us_states = response.json()
+        # Read US states GeoJSON from local file
+        with open(us_states_file, 'r') as f:
+            us_states = json.load(f)
         
         # Print for debugging
-        print(f"Successfully fetched US states GeoJSON with {len(us_states['features'])} features")
+        print(f"Successfully loaded US states GeoJSON with {len(us_states['features'])} features")
         
         # Define transformation parameters
         nola_lat, nola_lon = 29.9511, -90.0715  # New Orleans coordinates
